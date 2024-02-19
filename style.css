@@ -1,68 +1,101 @@
-/* Basic Reset */
-* {
+/* Base styles for body, inputs, and buttons */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-body, html {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9; /* Light background for a modern look */
-    color: #333; /* Dark grey color for text */
+input[type="text"], button {
+    font-family: inherit;
 }
 
-/* Navigation Bar Styles */
-.nav {
-    background-color: #a8d5e2; /* Soft green/blue shade */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* Navigation styles */
+nav {
+    width: 100%;
+    background-color: #004d00; /* Darker green for contrast */
+    padding: 10px 0;
 }
 
-.nav ul {
-    list-style-type: none;
-    text-align: center;
+nav ul {
+    list-style: none;
     padding: 0;
-    line-height: 60px; /* Adjust height of navbar */
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.nav ul li {
-    display: inline-block;
-    margin: 0 20px; /* Spacing between menu items */
+nav ul li {
+    margin: 0 20px;
 }
 
-.nav ul li a {
+nav ul li a {
+    color: #ffffff;
     text-decoration: none;
-    color: #ffffff; /* White text color */
     font-weight: bold;
-    transition: color 0.3s ease-in-out;
 }
 
-.nav ul li a:hover, .nav ul li a:focus {
-    color: #ff69b4; /* Pink color for hover state */
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-}
-
-/* Additional Styling for Other Elements */
-.container, .gallery-container, .note-container {
-    max-width: 800px;
-    margin: 20px auto;
+/* General container styles for content */
+.container, .gallery-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    background-color: #ffffff; /* White background for content areas */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px;
     text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Photo gallery styles */
+.gallery-container {
+    text-align: left;
+}
+
+.photo {
+    margin-bottom: 20px;
 }
 
 .photo img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.photo p {
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Enhancements for headings and paragraphs */
+h1, h2 {
+    color: #006400; /* Dark green */
+    background: -webkit-linear-gradient(45deg, #f9d423, #ff4e50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .container, .gallery-container {
+        width: 90%;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
 }
