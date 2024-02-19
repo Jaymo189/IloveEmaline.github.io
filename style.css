@@ -94,6 +94,50 @@ p {
     text-align: justify; /* Optional: for a smoother text flow */
 }
 
+/* Photo gallery grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.photo-highlight {
+    grid-column: -1 / 1;
+    grid-row: 1;
+}
+
+.photo-highlight img {
+    border: 4px solid #ffd700; /* Highlight with a yellow border */
+    padding: 5px;
+    background-color: #fff;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Adjustments for the highlighted image to make it stand out */
+@media (min-width: 600px) {
+    .photo-highlight {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 2;
+        z-index: 10;
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 599px) {
+    .photo-highlight {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     .container, .gallery-container {
