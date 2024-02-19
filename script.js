@@ -1,9 +1,11 @@
 function checkQuiz() {
-    const correctAnswer = "MM/DD"; // Replace MM/DD with your actual anniversary date
+    const correctAnswer = "Pufferfish";
     const userAnswer = document.getElementById('quizAnswer').value;
-    if(userAnswer === correctAnswer) {
+    const correctAnswer2 = "Emaline";
+    const userAnswer2 = document.getElementById('quizAnswer').value;
+    if(userAnswer === correctAnswer && userAnswer2 === correctAnswer2) {
         window.location.href = 'main.html';
     } else {
-        alert("Hmm, not quite. Try again!");
+        alert("Noooo little mems thats not right!");
     }
 }

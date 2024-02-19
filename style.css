@@ -1,42 +1,68 @@
-body, html {
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-.quiz-body {
-    background-color: #fff7e6; /* Soft yellow */
+body, html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9; /* Light background for a modern look */
+    color: #333; /* Dark grey color for text */
 }
 
+/* Navigation Bar Styles */
 .nav {
-    background-color: #d1e8d1; /* Soft green */
-    padding: 10px 0;
-    text-align: center;
+    background-color: #a8d5e2; /* Soft green/blue shade */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav ul {
     list-style-type: none;
+    text-align: center;
     padding: 0;
+    line-height: 60px; /* Adjust height of navbar */
 }
 
 .nav ul li {
-    display: inline;
-    margin: 0 10px;
+    display: inline-block;
+    margin: 0 20px; /* Spacing between menu items */
 }
 
 .nav ul li a {
     text-decoration: none;
-    color: #ff69b4; /* Pink */
+    color: #ffffff; /* White text color */
     font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
-.gallery-container, .note-container {
-    max-width: 600px;
+.nav ul li a:hover, .nav ul li a:focus {
+    color: #ff69b4; /* Pink color for hover state */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/* Additional Styling for Other Elements */
+.container, .gallery-container, .note-container {
+    max-width: 800px;
     margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for content areas */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
 }
 
 .photo img {
-    width: 100%; /* Adjust as necessary */
+    max-width: 100%;
+    height: auto;
     margin-bottom: 10px;
 }
