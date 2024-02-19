@@ -89,6 +89,11 @@ p {
     line-height: 1.6;
 }
 
+.note-container p {
+    margin-bottom: 2rem; /* Double space between paragraphs */
+    text-align: justify; /* Optional: for a smoother text flow */
+}
+
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     .container, .gallery-container {
