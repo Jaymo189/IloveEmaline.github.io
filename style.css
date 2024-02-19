@@ -1,4 +1,3 @@
-/* Base styles for body, inputs, and buttons */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -11,14 +10,13 @@ body {
     min-height: 100vh;
 }
 
-input[type="text"], button {
+input[type="text"], button, nav ul li a {
     font-family: inherit;
 }
 
-/* Navigation styles */
 nav {
     width: 100%;
-    background-color: #004d00; /* Darker green for contrast */
+    background-color: #004d00;
     padding: 10px 0;
 }
 
@@ -44,7 +42,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* General container styles for content */
 .container, .gallery-container {
     background-color: #ffffff;
     border-radius: 10px;
@@ -56,16 +53,15 @@ nav ul li a:hover {
     max-width: 600px;
 }
 
-/* Photo gallery styles */
 .gallery-container {
-    text-align: left;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
 }
 
-.photo {
+.photo, .photo-grid img, .photo-highlight img {
     margin-bottom: 20px;
-}
-
-.photo img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
@@ -76,107 +72,99 @@ nav ul li a:hover {
     margin-top: 5px;
 }
 
-/* Enhancements for headings and paragraphs */
 h1, h2 {
-    color: #006400; /* Dark green */
+    color: #006400;
     background: -webkit-linear-gradient(45deg, #f9d423, #ff4e50);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-p {
+p, .note-container p {
     color: #555;
     line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: justify;
 }
 
-.note-container p {
-    margin-bottom: 2rem; /* Double space between paragraphs */
-    text-align: justify; /* Optional: for a smoother text flow */
-}
-
-/* Style for the gallery container */
-.gallery-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Grid layout for photos */
 .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
-    align-items: center;
-    justify-items: center;
 }
 
-/* Regular photo styling */
-.photo-grid img {
-    width: 100%;
-    max-width: 300px; /* Adjust the size of the images */
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.photo-grid img, .photo-highlight img {
+    width: 150px;
+    transition: transform 0.3s ease;
 }
 
-/* Highlighted photo styling */
+.photo-grid img:hover, .photo-highlight img:hover {
+    transform: scale(1.1);
+}
+
 .photo-highlight {
+    position: relative;
+    flex: 1 1 300px;
     grid-column: 2;
     grid-row: 2 / span 2;
     z-index: 2;
+    order: 2;
+    flex-grow: 2;
 }
 
 .photo-highlight img {
-    width: 100%;
-    max-width: 500px; /* Larger size for the highlighted image */
-    border: 4px solid #ffd700; /* Yellow border */
-    border-radius: 5px;
+    width: 300px;
+    border: 4px solid #ffd700;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Responsive adjustments */
+.before-highlight {
+    order: 1;
+}
+
+.after-highlight {
+    order: 3;
+}
+
 @media (max-width: 768px) {
+    .container, .gallery-container, .photo-grid {
+        width: 90%;
+    }
+
     .photo-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .photo-highlight {
         grid-column: 1 / -1;
+        flex-grow: 1;
+    }
+
+    .photo-highlight img {
+        width: 250px;
+    }
+
+    .photo-grid img, .photo-highlight img {
+        width: 120px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
     }
 }
 
 @media (max-width: 480px) {
     .photo-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* Adjustments for the highlighted image to make it stand out */
-@media (min-width: 600px) {
-    .photo-highlight {
-        grid-column: 2 / span 2;
-        grid-row: 2 / span 2;
-        z-index: 10;
-    }
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 599px) {
-    .photo-highlight {
-        grid-column: 1 / -1;
-        grid-row: auto;
-    }
-}
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-    .container, .gallery-container {
-        width: 90%;
+        flex-direction: column;
     }
 
-    nav ul li {
-        margin: 0 10px;
+    .photo-grid img, .photo-highlight img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .before-highlight, .after-highlight, .photo-highlight {
+        order: 0;
     }
 }

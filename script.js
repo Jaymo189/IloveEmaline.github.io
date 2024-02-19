@@ -1,8 +1,8 @@
 function checkQuiz() {
-    const correctAnswer = "pufferfish"; // Convert correct answer to lowercase
-    const userAnswer = document.getElementById('quizAnswer').value.toLowerCase(); // Convert user input to lowercase
-    const correctAnswer2 = "emaline"; // Convert correct answer to lowercase
-    const userAnswer2 = document.getElementById('quizAnswer2').value.toLowerCase(); // Convert user input to lowercase
+    const correctAnswer = "pufferfish";
+    const userAnswer = document.getElementById('quizAnswer').value.toLowerCase(); 
+    const correctAnswer2 = "emaline"; 
+    const userAnswer2 = document.getElementById('quizAnswer2').value.toLowerCase(); 
     
     if(userAnswer === correctAnswer && userAnswer2 === correctAnswer2) {
         window.location.href = 'main.html';
