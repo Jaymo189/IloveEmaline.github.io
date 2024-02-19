@@ -2,33 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halo Home</title>
-<style>
-    body {background-color: #90EE90; font-family: Arial, sans-serif;}
-    a {text-decoration: none;}
-    #header {text-align: center; padding: 20px;}
-    .highlight {background-color: #FFD700;}
-    .small-text {font-size: .5em;}
-    .large-text {font-size: 1.5em;}
-    .highlight.large-text {color: #333333;}
-    a:hover {text-decoration: underline;}
-    a:active {color:#0f0d6d;text-decoration:underline;}
-</style>
+    <title>Our Anniversary</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div>
-      <a href="pages/halowars2.html">Halo Wars 2</a>
-      <a href="pages/gamesranking.html">Game Ranking</a>
+<body class="quiz-body">
+    <div class="quiz-container">
+        <h2>Welcome to Our Anniversary Site!</h2>
+        <p>Let's see if you remember this one:</p>
+        <p>What's our anniversary date? (Format: MM/DD)</p>
+        <input type="text" id="quizAnswer" placeholder="MM/DD">
+        <button onclick="checkQuiz()">Enter</button>
     </div>
-    <div id="header">
-        <h2> Introduction </h2>
-        <h1 class="highlight large-text"> Halo </h1>
-    </div>
-    <p> Halo is mainly an FPS <span class="highlight">shooter game</span> that was released in 2001 with the first Installment "Halo"</p>
-    <p> Since then many different companies under the watch of <span class="highlight">microsoft</span> have created many more halo games ranging from arcade style games like fireteam raven to RTS games like Halo Wars 2</p>
-    <p class="large-text">Jameson's email </p>
-    <a class="small-text" href="mailto:jamesondunsford218@gmail.com">jamesondunsford218@gmail.com (send me an email with any questions!!!)</a><br>
-    <img src="images/halo1cover.jpg" width="200" height="200" alt="Halo CE Cover">
+    <script src="script.js"></script>
 </body>
 </html>
