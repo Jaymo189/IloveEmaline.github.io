@@ -94,32 +94,64 @@ p {
     text-align: justify; /* Optional: for a smoother text flow */
 }
 
-/* Photo gallery grid */
+/* Style for the gallery container */
+.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Grid layout for photos */
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding: 20px;
+    align-items: center;
     justify-items: center;
 }
 
-.photo-highlight {
-    grid-column: -1 / 1;
-    grid-row: 1;
-}
-
-.photo-highlight img {
-    border: 4px solid #ffd700; /* Highlight with a yellow border */
-    padding: 5px;
-    background-color: #fff;
-}
-
+/* Regular photo styling */
 .photo-grid img {
     width: 100%;
+    max-width: 300px; /* Adjust the size of the images */
     height: auto;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/* Highlighted photo styling */
+.photo-highlight {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    z-index: 2;
+}
+
+.photo-highlight img {
+    width: 100%;
+    max-width: 500px; /* Larger size for the highlighted image */
+    border: 4px solid #ffd700; /* Yellow border */
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-highlight {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* Adjustments for the highlighted image to make it stand out */
 @media (min-width: 600px) {
