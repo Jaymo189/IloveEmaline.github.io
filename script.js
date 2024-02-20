@@ -4,7 +4,7 @@ function checkQuiz() {
     const correctAnswer2 = "emaline"; 
     const userAnswer2 = document.getElementById('quizAnswer2').value.toLowerCase().trim(); 
     
-    if(userAnswer === correctAnswer && userAnswer2 === correctAnswer2) {
+    if(userAnswer.trim() === correctAnswer.trim() && userAnswer2.trim() === correctAnswer2.trim()) {
         window.location.href = 'main.html';
     } else {
         alert("Noooo little mems that's not right!");
